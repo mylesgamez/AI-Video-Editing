@@ -16,11 +16,25 @@ const VideoUploader: FC<VideoUploaderProps> = ({ onVideoUpload }) => {
   };
 
   return (
-    <div>
-      <label htmlFor="video-upload">Upload Video:</label>
-      <input type="file" id="video-upload" onChange={handleUpload} />
+    <div className="flex flex-col items-center w-full">
+      <input
+        className="hidden"
+        type="file"
+        id="video-upload"
+        onChange={handleUpload}
+      />
+      <div className="flex items-center space-x-2">
+        <span className="text-gray-600">{file ? file.name : "Upload a video"}</span>
+        <label
+          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded cursor-pointer"
+          htmlFor="video-upload"
+        >
+          Browse
+        </label>
+      </div>
     </div>
   );
+
 };
 
 export default VideoUploader;

@@ -36,10 +36,15 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <VideoUploader onVideoUpload={handleVideoUpload} />
-      {videoFile && <VideoEditor onEdit={handleEdit} />}
-      {editedVideoSrc && <VideoPlayer src={editedVideoSrc} />}
+    <div className="relative min-h-screen bg-gradient-to-tr from-gray-100 to-gray-200">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-lg bg-white p-6 rounded-xl shadow-xl space-y-8">
+        <h1 className="text-4xl font-semibold text-blue-700 text-center">AI Video Editor</h1>
+        <VideoUploader onVideoUpload={handleVideoUpload} />
+        {videoFile && <VideoEditor onEdit={handleEdit} />}
+        {editedVideoSrc && <VideoPlayer src={editedVideoSrc} />}
+      </div>
     </div>
   );
+
+
 }

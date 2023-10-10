@@ -6,9 +6,11 @@ interface VideoPlayerProps {
 
 const VideoPlayer: FC<VideoPlayerProps> = ({ src }) => {
   return (
-    <video controls src={src} width="500">
-      Your browser does not support the video tag.
-    </video>
+    <div>
+      <video controls src={src} width="100%">
+        Your browser does not support the video tag.
+      </video>
+    </div>
   );
 };
 
